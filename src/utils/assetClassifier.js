@@ -95,6 +95,23 @@ export function getAssetBadgeClass(assetType) {
 }
 
 /**
+ * Get display name for asset type
+ * @param {string} assetType - Asset type
+ * @returns {string} Display name
+ */
+export function getAssetDisplayName(assetType) {
+  const displayNames = {
+    'ETF': 'ETF & MF',
+    'Equity': 'Equity',
+    'Bond/NCD': 'Bond/NCD',
+    'SGB': 'SGB',
+    'InvIT': 'InvIT',
+    'Other': 'Other',
+  };
+  return displayNames[assetType] || assetType;
+}
+
+/**
  * Get all unique asset types from holdings
  * @param {Array} holdings - Array of holdings
  * @returns {Array<string>} Array of unique asset types

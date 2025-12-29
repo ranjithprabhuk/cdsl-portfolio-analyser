@@ -66,10 +66,12 @@ export function calculateAssetAllocation(holdings) {
         assetType,
         totalValue: 0,
         count: 0,
+        totalQuantity: 0,
       };
     }
     assetMap[assetType].totalValue += holding.value;
     assetMap[assetType].count += 1;
+    assetMap[assetType].totalQuantity += holding.balance || 0;
   });
   
   // Calculate total value
