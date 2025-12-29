@@ -1,6 +1,6 @@
 import React from 'react';
 import { formatCurrency, formatPercentage, formatNumber } from '../utils/formatters';
-import { getAssetColor } from '../utils/assetClassifier';
+import { getAssetColor, getAssetDisplayName } from '../utils/assetClassifier';
 
 function AssetSummaryCards({ assetAllocation }) {
   if (!assetAllocation || assetAllocation.length === 0) {
@@ -14,7 +14,7 @@ function AssetSummaryCards({ assetAllocation }) {
           <div className="card asset-card h-100 shadow-sm">
             <div className="card-body">
               <div className="d-flex justify-content-between align-items-start mb-2">
-                <h6 className="card-title mb-0">{asset.assetType}</h6>
+                <h6 className="card-title mb-0">{getAssetDisplayName(asset.assetType)}</h6>
                 <div
                   style={{
                     width: '12px',
@@ -27,7 +27,7 @@ function AssetSummaryCards({ assetAllocation }) {
               <h4 className="mb-2">{formatCurrency(asset.totalValue)}</h4>
               <div className="d-flex justify-content-between text-muted small">
                 <span>{formatPercentage(asset.percentage)}</span>
-                <span>{formatNumber(asset.count)} holdings</span>
+                <span>{(asset.assetType === 'SGB' ? `(${formatNumber(asset.totalQuantity)} grams)` : '')} {`${formatNumber(asset.count)} holdings`}</span>
               </div>
               <div className="progress mt-2" style={{ height: '4px' }}>
                 <div
