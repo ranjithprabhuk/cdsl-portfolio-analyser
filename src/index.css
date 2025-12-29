@@ -1,0 +1,140 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #f8f9fa;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.file-upload-zone {
+  border: 2px dashed #dee2e6;
+  border-radius: 8px;
+  padding: 3rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.file-upload-zone:hover {
+  border-color: #0d6efd;
+  background-color: #f8f9fa;
+}
+
+.file-upload-zone.drag-over {
+  border-color: #0d6efd;
+  background-color: #e7f1ff;
+}
+
+.uploaded-file-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  margin: 0.25rem;
+  background-color: #e7f1ff;
+  border: 1px solid #0d6efd;
+  border-radius: 20px;
+  font-size: 0.875rem;
+}
+
+.uploaded-file-badge .remove-btn {
+  background: none;
+  border: none;
+  color: #dc3545;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0;
+  margin-left: 0.5rem;
+}
+
+.uploaded-file-badge .remove-btn:hover {
+  color: #bb2d3b;
+}
+
+.asset-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.asset-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.holdings-table {
+  font-size: 0.9rem;
+}
+
+.holdings-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.holdings-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.badge-equity {
+  background-color: #0d6efd;
+}
+
+.badge-bond {
+  background-color: #6610f2;
+}
+
+.badge-etf {
+  background-color: #d63384;
+}
+
+.badge-sgb {
+  background-color: #fd7e14;
+}
+
+.badge-invit {
+  background-color: #20c997;
+}
+
+.badge-other {
+  background-color: #6c757d;
+}
+
+.spinner-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+@media (max-width: 768px) {
+  .file-upload-zone {
+    padding: 2rem 1rem;
+  }
+  
+  .holdings-table {
+    font-size: 0.8rem;
+  }
+}
